@@ -1,5 +1,3 @@
-// Basic demo for accelerometer readings from Adafruit MPU6050
-
 #include <Adafruit_MPU6050.h>
 #include <Adafruit_Sensor.h>
 #include <Wire.h>
@@ -97,7 +95,8 @@ void loop() {
         Serial1.print("S=");
         Serial1.print(status);
         Serial1.print("T=");
-        if (temp.temperature > 0) Serial1.print("0");
+        if (temp.temperature => 10.0 || temp.temperature <= -10.0) Serial1.print("0");
+        if (temp.temperature > 0.0) Serial1.print("0");
         Serial1.print(temp.temperature, 2);
         Serial1.print("D=");
         Serial1.write(container.bytes, 120);
